@@ -13,7 +13,7 @@ const Contact = () => {
       <div className="contact__content">
         <h2 className="section__header">Contact Me</h2>
         <p className="section__description">
-          I'm always open to new opportunities and collaborations. Feel free to
+          I am always open to new opportunities and collaborations. Feel free to
           reach out to me!
         </p>
         <div className="flex justify-center gap-4">

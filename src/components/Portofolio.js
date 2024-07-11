@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function Portfolio() {
@@ -12,21 +13,21 @@ export default function Portfolio() {
       </p>
       <div className="portfolio__grid">
         <div className="portfolio__card">
-          <img src="assets/dashboard-dbyunta.png" alt="Dashboard Dbyunta" />
+          <Image src="assets/dashboard-dbyunta.png" alt="Dashboard Dbyunta" />
           <div className="portfolio__details">
             <h3>Sistem Database Warga</h3>
             <p>Sistem yang digunakan untuk mengelola data warga suatu desa</p>
           </div>
         </div>
         <div className="portfolio__card">
-          <img src="assets/dashboard-fitmeal.png" alt="Dashboard Fitmeal" />
+          <Image src="assets/dashboard-fitmeal.png" alt="Dashboard Fitmeal" />
           <div className="portfolio__details">
             <h3>Web App Fitmeal</h3>
             <p>Aplikasi pembelian makanan sehat online</p>
           </div>
         </div>
         <div className="portfolio__card">
-          <img src="assets/signup-sinoki.png" alt="Sign Up Page Sinoki" />
+          <Image src="assets/signup-sinoki.png" alt="Sign Up Page Sinoki" />
           <div className="portfolio__details">
             <h3>Mockup WEb SINOKI</h3>
             <p>
@@ -36,7 +37,7 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="portfolio__card">
-          <img src="assets/dashboard-laundree.png" alt="Dashboard Laundree" />
+          <Image src="assets/dashboard-laundree.png" alt="Dashboard Laundree" />
           <div className="portfolio__details">
             <h3>Web App Laundree</h3>
             <p>Aplikasi untuk pengelolaan laundry online</p>

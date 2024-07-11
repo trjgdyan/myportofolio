@@ -1,5 +1,6 @@
 import React from "react";
 import { RiStarFill, RiTelegramLine } from "@remixicon/react";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
       id="home"
     >
       <div className="header__image">
-        <img src="assets/yani-profile.jpeg" alt="header" />
+        <Image src="assets/yani-profile.jpeg" alt="header" />
       </div>
       <div className="header__content">
         <div>

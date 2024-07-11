@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function Services() {
@@ -28,7 +29,7 @@ export default function Services() {
               className="rounded-full bg-white p-5 h-24 w-24 mb-10 transform transition hover:scale-110 duration-500 flex flex-col items-center"
             >
               <div className="flex items-center justify-center flex-grow">
-                <img src={item.src} alt={item.alt} className="w-12 h-12" />
+                <Image src={item.src} alt={item.alt} className="w-12 h-12" />
               </div>
               <p className="text-center mt-8">{item.label}</p>
             </div>
