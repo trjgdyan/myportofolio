@@ -6,13 +6,15 @@ import Services from "../components/Services";
 import Portofolio from "../components/Portofolio";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Education from "../components/Education";
 
 const App = () => {
   return (
-    <div>
+    <div className="scroll-smooth">
       <Navbar />
       <Header />
       <About />
+      <Education />
       <Services />
       <Portofolio />
       <Contact />

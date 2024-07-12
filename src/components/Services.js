@@ -1,21 +1,34 @@
 import Image from "next/image";
 import React from "react";
+import html from "../../public/assets/html.png";
+import css from "../../public/assets/css.png";
+import js from "../../public/assets/js.png";
+import php from "../../public/assets/php.png";
+import java from "../../public/assets/java.png";
+import laravel from "../../public/assets/laravel.png";
+import flutter from "../../public/assets/flutter.png";
+import mysql from "../../public/assets/mysql.png";
+import nextjs from "../../public/assets/nextjs.png";
+import figma from "../../public/assets/figma.png";
+import tailwind from "../../public/assets/tailwind.png";
+import bootstrap from "../../public/assets/bootstrap.png";
+import mongodb from "../../public/assets/mongodb.png";
 
 export default function Services() {
   const data = [
-    { src: "assets/html.png", alt: "HTML", label: "HTML" },
-    { src: "assets/css.png", alt: "CSS", label: "CSS" },
-    { src: "assets/js.png", alt: "JS", label: "JS" },
-    { src: "assets/php.png", alt: "PHP", label: "PHP" },
-    { src: "assets/java.png", alt: "Java", label: "Java" },
-    { src: "assets/laravel.png", alt: "Laravel", label: "Laravel" },
-    { src: "assets/flutter.png", alt: "Flutter", label: "Flutter" },
-    { src: "assets/mysql.png", alt: "MySQL", label: "MySQL" },
-    { src: "assets/nextjs.png", alt: "Next.js", label: "Next.js" },
-    { src: "assets/figma.png", alt: "Figma", label: "Figma" },
-    { src: "assets/tailwind.png", alt: "Tailwind", label: "Tailwind" },
-    { src: "assets/bootstrap.png", alt: "Bootstrap", label: "Bootstrap" },
-    { src: "assets/mongodb.png", alt: "MongoDB", label: "MongoDB" },
+    { src: html, alt: "HTML", label: "HTML" },
+    { src: css, alt: "CSS", label: "CSS" },
+    { src: js, alt: "JS", label: "JS" },
+    { src: php, alt: "PHP", label: "PHP" },
+    { src: java, alt: "Java", label: "Java" },
+    { src: laravel, alt: "Laravel", label: "Laravel" },
+    { src: flutter, alt: "Flutter", label: "Flutter" },
+    { src: mysql, alt: "MySQL", label: "MySQL" },
+    { src: nextjs, alt: "Next.js", label: "Next.js" },
+    { src: figma, alt: "Figma", label: "Figma" },
+    { src: tailwind, alt: "Tailwind", label: "Tailwind" },
+    { src: bootstrap, alt: "Bootstrap", label: "Bootstrap" },
+    { src: mongodb, alt: "MongoDB", label: "MongoDB" },
   ];
 
   return (
@@ -26,10 +39,16 @@ export default function Services() {
           {data.map((item, index) => (
             <div
               key={index}
-              className="rounded-full bg-white p-5 h-24 w-24 mb-10 transform transition hover:scale-110 duration-500 flex flex-col items-center"
+              className="rounded-full bg-white p-5 h-24 w-24 mb-10 transform transition hover:scale-125 duration-500 flex flex-col items-center"
             >
               <div className="flex items-center justify-center flex-grow">
-                <Image src={item.src} alt={item.alt} className="w-12 h-12" />
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-12 h-12"
+                  width={500}
+                  height={500}
+                />
               </div>
               <p className="text-center mt-8">{item.label}</p>
             </div>

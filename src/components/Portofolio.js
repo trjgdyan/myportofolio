@@ -1,5 +1,8 @@
 import Image from "next/image";
 import React from "react";
+import databaseyunta from "../../public/assets/dashboard-dbyunta.png";
+import fitmeal from "../../public/assets/dashboard-fitmeal.png";
+import sinoki from "../../public/assets/signup-sinoki.png";
 
 export default function Portfolio() {
   return (
@@ -13,21 +16,31 @@ export default function Portfolio() {
       </p>
       <div className="portfolio__grid">
         <div className="portfolio__card">
-          <Image src="assets/dashboard-dbyunta.png" alt="Dashboard Dbyunta" />
+          <Image
+            src={databaseyunta}
+            width={400}
+            height={400}
+            alt="Dashboard Dbyunta"
+          />
           <div className="portfolio__details">
             <h3>Sistem Database Warga</h3>
             <p>Sistem yang digunakan untuk mengelola data warga suatu desa</p>
           </div>
         </div>
         <div className="portfolio__card">
-          <Image src="assets/dashboard-fitmeal.png" alt="Dashboard Fitmeal" />
+          <Image src={fitmeal} width={400} height={400} alt="Dashboard Fitmeal" />
           <div className="portfolio__details">
             <h3>Web App Fitmeal</h3>
             <p>Aplikasi pembelian makanan sehat online</p>
           </div>
         </div>
         <div className="portfolio__card">
-          <Image src="assets/signup-sinoki.png" alt="Sign Up Page Sinoki" />
+          <Image
+            src={sinoki}
+            width={400}
+            height={400}
+            alt="Sign Up Page Sinoki"
+          />
           <div className="portfolio__details">
             <h3>Mockup WEb SINOKI</h3>
             <p>
@@ -36,13 +49,13 @@ export default function Portfolio() {
             </p>
           </div>
         </div>
-        <div className="portfolio__card">
-          <Image src="assets/dashboard-laundree.png" alt="Dashboard Laundree" />
+        {/* <div className="portfolio__card">
+          <Image src="assets/dashboard-laundree.png" width={400} height={400}alt="Dashboard Laundree" />
           <div className="portfolio__details">
             <h3>Web App Laundree</h3>
             <p>Aplikasi untuk pengelolaan laundry online</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,13 +1,33 @@
 import Image from "next/image";
 import React from "react";
+import bg from "../../public/assets/bg.png";
+import fotoabout from "../../public/assets/coba1.jpeg";
 
 export default function About() {
   return (
     <section className="section__container about__container" id="about">
       <div className="about__image">
-        <Image src="assets/bg.png" alt="bg" className="about__bg-1" />
-        <Image src="assets/bg.png" alt="bg" className="about__bg-2" />
-        <Image src="assets/coba1.jpeg" alt="about" className="about__img" />
+        <Image
+          src={bg}
+          alt="bg"
+          className="about__bg-1"
+          width={400}
+          height={400}
+        />
+        <Image
+          src={bg}
+          alt="bg"
+          className="about__bg-2 "
+          width={400}
+          height={400}
+        />
+        <Image
+          src={fotoabout}
+          alt="about"
+          className="about__img"
+          width={400}
+          height={400}
+        />
       </div>
       <div className="about__content">
         <h2 className="section__header">About Me</h2>
@@ -24,7 +44,7 @@ export default function About() {
             href="https://drive.google.com/file/d/1X9I-9bYjLeCVFccWACh8J3rg6RhfpxHX/view"
             download
           >
-            <button className="btn">Download CV</button>
+            <button className="btn-custom">Download CV</button>
           </a>
         </div>
       </div>
