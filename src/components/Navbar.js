@@ -25,7 +25,7 @@ export default function Navbar() {
       <ul
         className={`nav__links flex-col md:flex md:flex-row md:items-center md:static fixed w-full left-0 bg-[#6b4c38] md:bg-transparent transition-all duration-300 ease-in-out ${
           isOpen ? "top-16 opacity-100" : "top-[-400px] opacity-0"
-        } md:opacity-100 md:top-auto`}
+        } md:opacity-100 md:top-auto `}
       >
         <li className="md:mx-2 my-2 md:my-0">
           <a href="#home" className="text-white block px-4 py-2 ">
