@@ -15,11 +15,11 @@ const Education = () => {
               </h2>
               {/* <p className="">Malang, East Java</p> */}
             </div>
-            <div className="md:text-[1.1em] mt-2">
+            <div className="md:text-[1.1em] mt-2">  
               <ul className="list-disc ms-10">
                 <li className="flex justify-between items-center">
                   <span>
-                    D4 Informatics Engineering - GPA <b>3.67</b>
+                    D4 Informatics Engineering - GPA <b>3.64</b>
                   </span>
                   <span className="opacity-90">2019-Now</span>
                 </li>
