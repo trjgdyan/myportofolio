@@ -13,22 +13,24 @@ import figma from "../../public/assets/figma.png";
 import tailwind from "../../public/assets/tailwind.png";
 import bootstrap from "../../public/assets/bootstrap.png";
 import mongodb from "../../public/assets/mongodb.png";
+import powerbi from "../../public/assets/powerbi.png";
 
 export default function Services() {
   const data = [
-    { src: html, alt: "HTML", label: "HTML" },
-    { src: css, alt: "CSS", label: "CSS" },
-    { src: js, alt: "JS", label: "JS" },
-    { src: php, alt: "PHP", label: "PHP" },
-    { src: java, alt: "Java", label: "Java" },
     { src: laravel, alt: "Laravel", label: "Laravel" },
-    { src: flutter, alt: "Flutter", label: "Flutter" },
+    { src: php, alt: "PHP", label: "PHP" },
     { src: mysql, alt: "MySQL", label: "MySQL" },
     { src: nextjs, alt: "Next.js", label: "Next.js" },
     { src: figma, alt: "Figma", label: "Figma" },
     { src: tailwind, alt: "Tailwind", label: "Tailwind" },
     { src: bootstrap, alt: "Bootstrap", label: "Bootstrap" },
+    { src: flutter, alt: "Flutter", label: "Flutter" },
+    { src: html, alt: "HTML", label: "HTML" },
+    { src: css, alt: "CSS", label: "CSS" },
+    { src: js, alt: "JS", label: "JS" },
+    { src: java, alt: "Java", label: "Java" },
     { src: mongodb, alt: "MongoDB", label: "MongoDB" },
+    { src: powerbi, alt: "Power BI", label: "Power BI" },
   ];
 
   return (

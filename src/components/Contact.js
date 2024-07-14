@@ -3,13 +3,15 @@ import {
   RiInstagramFill,
   RiGithubFill,
   RiLinkedinFill,
-  RiTwitterFill,
-  RiYoutubeFill,
+  RiWhatsappFill,
 } from "@remixicon/react";
 
 const Contact = () => {
   return (
-    <section className="section__container contact__container backdrop-sepia-0 bg-white/30 p-20 rounded-lg shadow-xl" id="contact">
+    <section
+      className="section__container contact__container backdrop-sepia-0 bg-white/30 p-20 rounded-lg shadow-xl"
+      id="contact"
+    >
       <div className="contact__content">
         <h2 className="section__header">Contact Me</h2>
         <p className="section__description">
@@ -19,7 +21,7 @@ const Contact = () => {
         <div className="flex justify-center gap-4">
           <div className="rounded-full bg-white bg-opacity-20 p-2 hover:bg-[#6b4c38]">
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/trjgdyann_?igsh=bmxtMXo4dDQ3a2Y3"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -42,6 +44,15 @@ const Contact = () => {
               rel="noopener noreferrer"
             >
               <RiLinkedinFill size={30} color="white" className="linkedin" />
+            </a>
+          </div>
+          <div className="rounded-full bg-white bg-opacity-20 p-2 hover:bg-[#6b4c38]">
+            <a
+              href="https://wa.me/+6289654184882"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <RiWhatsappFill size={30} color="white" className="WhatsApp" />
             </a>
           </div>
         </div>

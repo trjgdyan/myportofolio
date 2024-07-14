@@ -30,7 +30,7 @@ export default function Header() {
         </div>
         <div className="header__btn ps-8 pt-4">
           <a href="mailto:trjgdyan@gmail.com">
-            <button className="bg-[#6b4c38] p-2 rounded-md text-l font-semibold outline outline-offset-2 outline-1 outline-[#211a0a] hover:bg-[#a18d7a]">
+            <button className="bg-[#6b4c38] p-2 rounded-md text-l font-semibold outline outline-offset-2 outline-1 outline-[#211a0a] hover:bg-[#a18d7a] animate-bounce">
               Hire Me Now
               {/* <span>
                 <RiTelegramLine size={20} className="ml-2" />

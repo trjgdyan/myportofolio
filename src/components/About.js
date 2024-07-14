@@ -41,7 +41,7 @@ export default function About() {
         </p>
         <div className="about__btn">
           <a
-            href="https://drive.google.com/file/d/1X9I-9bYjLeCVFccWACh8J3rg6RhfpxHX/view"
+            href="https://drive.google.com/file/d/1X9I-9bYjLeCVFccWACh8J3rg6RhfpxHX/view" target="_blank" rel="noopener noreferrer"
             download
           >
             <button className="btn-custom">Download CV</button>
