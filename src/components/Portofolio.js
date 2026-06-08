@@ -96,7 +96,7 @@ const projects = [
 export default function Portofolio() {
   return (
     <section className="section" id="portfolio">
-      <div className="label">What I've built</div>
+      <div className="label">What I&apos;ve built</div>
       <h2 className="section-title">
         My <span className="accent-text">Projects</span>
       </h2>
