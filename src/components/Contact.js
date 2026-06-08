@@ -62,7 +62,7 @@ export default function Contact() {
           <div>
             <div className="label">Get in touch</div>
             <h2 className="section-title">
-              Let's Work
+              {"Let's Work"}
               <br />
               <span className="accent-text">Together</span>
             </h2>
@@ -75,8 +75,9 @@ export default function Contact() {
                 maxWidth: "340px",
               }}
             >
-              I'm always open to new opportunities, collaborations, and
-              interesting projects. Drop a message — I'd love to hear from you!
+              {
+                "I'm always open to new opportunities, collaborations, and interesting projects. Drop a message — I'd love to hear from you!"
+              }
             </p>
             <a
               href="mailto:trjgdyan@gmail.com"
