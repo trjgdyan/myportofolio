@@ -4,91 +4,158 @@ import {
   RiGithubFill,
   RiLinkedinFill,
   RiWhatsappFill,
+  RiMailFill,
 } from "@remixicon/react";
 
-const Contact = () => {
+const socials = [
+  {
+    icon: RiGithubFill,
+    label: "GitHub",
+    value: "@trjgdyan",
+    href: "https://github.com/trjgdyan",
+    color: "#0f1117",
+  },
+  {
+    icon: RiLinkedinFill,
+    label: "LinkedIn",
+    value: "trijagadariyani",
+    href: "https://www.linkedin.com/in/trijagadariyani/",
+    color: "#0a66c2",
+  },
+  {
+    icon: RiInstagramFill,
+    label: "Instagram",
+    value: "@trjgdyann_",
+    href: "https://www.instagram.com/trjgdyann_",
+    color: "#e1306c",
+  },
+  {
+    icon: RiWhatsappFill,
+    label: "WhatsApp",
+    value: "+62 896 5418 4882",
+    href: "https://wa.me/+6289654184882",
+    color: "#25d366",
+  },
+  {
+    icon: RiMailFill,
+    label: "Email",
+    value: "trjgdyan@gmail.com",
+    href: "mailto:trjgdyan@gmail.com",
+    color: "#3b5bdb",
+  },
+];
+
+export default function Contact() {
   return (
-    <section
-      className="section__container contact__container backdrop-sepia-0 bg-white/30 p-20 rounded-lg shadow-xl"
-      id="contact"
-    >
-      <div className="contact__content">
-        <h2 className="section__header">Contact Me</h2>
-        <p className="section__description">
-          I am always open to new opportunities and collaborations. Feel free to
-          reach out to me!
-        </p>
-        <div className="flex justify-center gap-4">
-          <div className="rounded-full bg-white bg-opacity-20 p-2 hover:bg-[#6b4c38]">
-            <a
-              href="https://www.instagram.com/trjgdyann_?igsh=bmxtMXo4dDQ3a2Y3"
-              target="_blank"
-              rel="noopener noreferrer"
+    <div className="section-alt">
+      <section className="section-alt-inner" id="contact">
+        <div
+          className="contact-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "72px",
+            alignItems: "start",
+          }}
+        >
+          {/* Left */}
+          <div>
+            <div className="label">Get in touch</div>
+            <h2 className="section-title">
+              Let's Work
+              <br />
+              <span className="accent-text">Together</span>
+            </h2>
+            <p
+              style={{
+                color: "var(--text-secondary)",
+                fontSize: "15px",
+                lineHeight: 1.8,
+                marginTop: "14px",
+                maxWidth: "340px",
+              }}
             >
-              <RiInstagramFill size={30} color="white" className="instagram" />
+              I'm always open to new opportunities, collaborations, and
+              interesting projects. Drop a message — I'd love to hear from you!
+            </p>
+            <a
+              href="mailto:trjgdyan@gmail.com"
+              className="btn-primary"
+              style={{ marginTop: "32px", display: "inline-flex" }}
+            >
+              Send Email
             </a>
           </div>
-          <div className="rounded-full bg-white bg-opacity-20 p-2 hover:bg-[#6b4c38]">
-            <a
-              href="https://github.com/trjgdyan"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <RiGithubFill size={30} color="white" className="github" />
-            </a>
-          </div>
-          <div className="rounded-full bg-white bg-opacity-20 p-2 hover:bg-[#6b4c38]">
-            <a
-              href="https://www.linkedin.com/in/trijagadariyani/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <RiLinkedinFill size={30} color="white" className="linkedin" />
-            </a>
-          </div>
-          <div className="rounded-full bg-white bg-opacity-20 p-2 hover:bg-[#6b4c38]">
-            <a
-              href="https://wa.me/+6289654184882"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <RiWhatsappFill size={30} color="white" className="WhatsApp" />
-            </a>
+
+          {/* Right — socials */}
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+          >
+            {socials.map(({ icon: Icon, label, value, href, color }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <div className="card social-card">
+                  <div
+                    style={{
+                      width: "38px",
+                      height: "38px",
+                      borderRadius: "var(--radius-sm)",
+                      background: `${color}14`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Icon size={18} color={color} />
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        fontSize: "10.5px",
+                        color: "var(--text-muted)",
+                        fontWeight: 700,
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {label}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "13.5px",
+                        fontWeight: 600,
+                        color: "var(--text-primary)",
+                        marginTop: "1px",
+                      }}
+                    >
+                      {value}
+                    </div>
+                  </div>
+                  <div
+                    style={{ marginLeft: "auto", color: "var(--text-muted)" }}
+                  >
+                    <svg width="13" height="13" viewBox="0 0 12 12" fill="none">
+                      <path
+                        d="M2 10L10 2M10 2H4M10 2V8"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
-
-        {/* <ul className="social__icons flex justify-center gap-5">
-          <li>
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <RiInstagramFill size={36} color="white" className="instagram" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.github.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <RiGithubFill size={36} color="white" className="github" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <RiLinkedinFill size={36} color="white" className="linkedin" />
-            </a>
-          </li>
-        </ul> */}
-      </div>
-    </section>
+      </section>
+    </div>
   );
-};
-
-export default Contact;
+}

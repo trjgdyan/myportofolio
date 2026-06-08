@@ -1,66 +1,136 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RiMenuLine, RiCloseLine } from "@remixicon/react";
+
+const links = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#education", label: "Education" },
+  { href: "#service", label: "Skills" },
+  { href: "#portfolio", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  function toggleMenu() {
-    setIsOpen(!isOpen);
-  }
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   return (
-    <nav className="fixed w-full bg-[#6b4c38] rounded-sm z-40 top-0 m-0 py-3 px-4 md:px-20 flex justify-between items-center">
-      <div className="flex items-center justify-between w-full md:w-auto">
-        <a href="#" className="text-white text-lg font-bold">
-          <span className="logo">Y</span> Yani
-        </a>
-        <div
-          className="nav__menu__btn text-white text-2xl cursor-pointer md:hidden"
-          onClick={toggleMenu}
-        >
-          {isOpen ? <RiCloseLine size={24} /> : <RiMenuLine size={24} />}
-        </div>
-      </div>
-      <ul
-        className={`nav__links flex-col md:flex md:flex-row md:items-center md:static fixed w-full left-0 bg-[#6b4c38] md:bg-transparent transition-all duration-300 ease-in-out ${
-          isOpen ? "top-16 opacity-100" : "top-[-400px] opacity-0"
-        } md:opacity-100 md:top-auto `}
+    <nav
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 100,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "0 40px",
+        height: "64px",
+        background: scrolled
+          ? "rgba(255,255,255,0.92)"
+          : "rgba(255,255,255,0.85)",
+        backdropFilter: "blur(16px)",
+        borderBottom: "1px solid var(--border)",
+        boxShadow: scrolled ? "var(--shadow-sm)" : "none",
+        transition: "box-shadow 0.3s ease",
+      }}
+    >
+      {/* Logo */}
+      <a
+        href="#home"
+        style={{
+          fontFamily: "var(--font)",
+          fontSize: "18px",
+          fontWeight: 800,
+          color: "var(--text-primary)",
+          textDecoration: "none",
+          letterSpacing: "-0.03em",
+        }}
       >
-        <li className="md:mx-2 my-2 md:my-0">
-          <a href="#home" className="text-white block px-4 py-2 ">
-            Home
-          </a>
-        </li>
-        <li className="md:mx-2 my-2 md:my-0">
-          <a href="#about" className="text-white block px-4 py-2">
-            About
-          </a>
-        </li>
-        <li className="md:mx-2 my-2 md:my-0">
-          <a href="#education" className="text-white block px-4 py-2">
-            Education
-          </a>
-        </li>
-        <li className="md:mx-2 my-2 md:my-0">
-          <a href="#service" className="text-white block px-4 py-2">
-            Skill
-          </a>
-        </li>
-        <li className="md:mx-2 my-2 md:my-0">
-          <a href="#portfolio" className="text-white block px-4 py-2">
-            Project
-          </a>
-        </li>
-        <li className="md:mx-2 my-2 md:my-0">
-          <a href="#contact" className="text-white block px-4 py-2 btn-custom">
-            Contact
-          </a>
-        </li>
+        yani<span style={{ color: "var(--accent)" }}>.dev</span>
+      </a>
+
+      {/* Desktop links */}
+      <ul
+        className="desktop-nav"
+        style={{ listStyle: "none", gap: "2px", alignItems: "center" }}
+      >
+        {links.slice(0, -1).map((link) => (
+          <li key={link.href}>
+            <a href={link.href} className="nav-link">
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
-      <a href="#contact" className="btn-custom btn__large hidden md:block">
+
+      {/* CTA */}
+      <a
+        href="#contact"
+        className="btn-primary desktop-nav"
+        style={{ fontSize: "13px", padding: "9px 20px" }}
+      >
         Contact
       </a>
+
+      {/* Burger */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="mobile-menu-btn"
+        style={{
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          color: "var(--text-primary)",
+        }}
+      >
+        {isOpen ? <RiCloseLine size={24} /> : <RiMenuLine size={24} />}
+      </button>
+
+      {/* Mobile drawer */}
+      {isOpen && (
+        <div
+          className="mobile-drawer"
+          style={{
+            position: "fixed",
+            inset: 0,
+            top: "64px",
+            background: "var(--bg-surface)",
+            padding: "24px 32px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "4px",
+            borderTop: "1px solid var(--border)",
+          }}
+        >
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              style={{
+                fontFamily: "var(--font)",
+                fontSize: "18px",
+                fontWeight: 700,
+                color: "var(--text-primary)",
+                textDecoration: "none",
+                padding: "12px 0",
+                borderBottom: "1px solid var(--border)",
+              }}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }

@@ -1,165 +1,270 @@
 import Image from "next/image";
 import React from "react";
 import databaseyunta from "../../public/assets/dashboard-dbyunta.png";
-import fitmeal from "../../public/assets/dashboard-fitmeal.png";
-import sinoki from "../../public/assets/signup-sinoki.png";
-import ecommerce from "../../public/assets/ecommerce.png";
-import edas from "../../public/assets/edas.png";
+import skripsi from "../../public/assets/skripsi.png";
 import projectmobile from "../../public/assets/projectmobile.jpeg";
+import spmsMobile from "../../public/assets/spmsmobile.jpeg";
 
-export default function Portfolio() {
+const projects = [
+  {
+    privateUi: true,
+    title: "PPIC System",
+    desc: "Developed a PPIC web system covering order management, sales revenue, stock and buffer, monthly, weekly, and daily production planning based on orders and inventory, as well as manpower planning for production needs.",
+    href: "",
+    tags: [
+      "Web",
+      "Manufacturing",
+      "Planning",
+      "Stock & Buffer",
+      "Sales Revenue",
+    ],
+  },
+  {
+    img: spmsMobile,
+    title: "Sparepart System",
+    desc: "Spare parts Management System, built an integrated spare parts inventory system used by field and office staff, improving stock transparency and ease of ordering",
+    href: "",
+    tags: ["Mobile", "Inventory", "React Native"],
+    portrait: true,
+  },
+  {
+    privateUi: true,
+    title: "Integration Call Maintenance",
+    desc: "Developed a maintenance call integration feature between CNC machines and the Andon system to improve response time in handling machine issues and help minimize production downtime. ",
+    href: "",
+    tags: ["Desktop", "C#", "Integration"],
+  },
+  // {
+  //   img: skripsi,
+  //   title: "Logistic Route Optimization",
+  //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  //   href: "",
+  //   tags: ["Web", "Logistics", "Optimization"],
+  // },
+  {
+    img: skripsi,
+    title: "Skripsi",
+    desc: "Implementation of Augmented Reality in the Product Catalog Application for Batik Gedog Tuban MSMEs",
+    href: "https://github.com/trjgdyan/ARBatikGedog",
+    tags: ["AR", "Desktop"],
+  },
+  {
+    img: databaseyunta,
+    title: "Sistem Database Warga",
+    desc: "A citizen database system for managing structured village resident data — personal, administrative, and population history.",
+    href: "https://github.com/Online-Academy-MSIB/db-warga-yunta",
+    tags: ["Web", "Database"],
+  },
+  // {
+  //   img: fitmeal,
+  //   title: "Fitmeal",
+  //   desc: "An online healthy food ordering app that makes it easy to browse, choose, and buy healthy meals digitally.",
+  //   href: "https://github.com/trjgdyan/web-fitmeal",
+  //   tags: ["Web", "E-commerce"],
+  // },
+  // {
+  //   img: ecommerce,
+  //   title: "E-commerce Platform",
+  //   desc: "A full-featured online shopping platform allowing users to search, select, and purchase products across categories.",
+  //   href: "https://github.com/trjgdyan/e-commerce",
+  //   tags: ["Web", "Full-stack"],
+  // },
+  // {
+  //   img: sinoki,
+  //   title: "SINOKI",
+  //   desc: "Polinema's intra-campus student organization information system — managing and sharing org activities digitally.",
+  //   href: "https://github.com/trjgdyan/SINOKI-POLINEMA",
+  //   tags: ["Web", "Education"],
+  // },
+  {
+    img: projectmobile,
+    title: "Ez Verify",
+    desc: "A mobile verification app prototype with an OCR system to scan and confirm information from physical documents.",
+    href: "https://github.com/trjgdyan/Mobile_project-akhir",
+    tags: ["Mobile", "OCR"],
+    portrait: true,
+  },
+  // {
+  //   img: edas,
+  //   title: "EDAS Website",
+  //   desc: "A decision support system using the EDAS method to help sellers determine the best-selling drinks on the market.",
+  //   href: "https://github.com/trjgdyan/ProjectSPK_EDAS",
+  //   tags: ["Web", "DSS"],
+  // },
+];
+
+export default function Portofolio() {
   return (
-    <section className="section__container portfolio__container" id="portfolio">
-      <h2 className="section__header">My Project</h2>
-      <p className="section__description">
-        Explore a meticulously crafted showcase of my work, illustrating my
-        expertise in web development, design, and more. Each project is a
-        testament to my dedication to creating immersive, cutting-edge digital
-        experiences.
+    <section className="section" id="portfolio">
+      <div className="label">What I've built</div>
+      <h2 className="section-title">
+        My <span className="accent-text">Projects</span>
+      </h2>
+      <p
+        style={{
+          color: "var(--text-secondary)",
+          fontSize: "15px",
+          maxWidth: "480px",
+          lineHeight: 1.75,
+          marginBottom: "48px",
+          marginTop: "10px",
+        }}
+      >
+        A selection of projects spanning web, mobile, and data — each one a
+        real-world problem solved with code.
       </p>
-      <div className="portfolio__grid">
-        <a
-          href="https://github.com/Online-Academy-MSIB/db-warga-yunta"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="portfolio__card">
-            <Image
-              src={databaseyunta}
-              width={400}
-              height={400}
-              alt="Dashboard Dbyunta"
-            />
-            <div className="portfolio__details">
-              <h3>Sistem Database Warga</h3>
-              <p>
-                The Citizen Database System is a system used to manage complete
-                and structured data regarding the residents of a village,
-                including personal, administrative and population history
-                information.
-              </p>
-            </div>
-          </div>
-        </a>
 
-        <a
-          href="https://github.com/trjgdyan/web-fitmeal"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="portfolio__card">
-            <Image
-              src={fitmeal}
-              width={400}
-              height={400}
-              alt="Dashboard Fitmeal"
-            />
-            <div className="portfolio__details">
-              <h3>Fitmeal</h3>
-              <p>
-                The Fitmeal Web App is an online healthy food purchasing
-                application that makes it easy for users to choose and buy
-                various healthy food options easily via a digital platform.
-              </p>
-            </div>
-          </div>
-        </a>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(310px, 1fr))",
+          gap: "18px",
+        }}
+      >
+        {projects.map((p) => (
+          <a
+            key={p.title}
+            href={p.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <div
+              className="card project-card"
+              style={{
+                overflow: "hidden",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              {/* Image */}
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: "190px",
+                  overflow: "hidden",
+                  background: "var(--bg-base)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "20px",
+                  textAlign: "center",
+                }}
+              >
+                {p.privateUi ? (
+                  <div
+                    style={{
+                      color: "var(--text-secondary)",
+                      fontSize: "13px",
+                      lineHeight: 1.6,
+                      fontWeight: 600,
+                    }}
+                  >
+                    UI tidak dapat ditampilkan karena privasi perusahaan
+                  </div>
+                ) : (
+                  <Image
+                    src={p.img}
+                    alt={p.title}
+                    fill
+                    className="project-img"
+                    style={{
+                      objectFit: p.portrait ? "contain" : "cover",
+                      objectPosition: "top",
+                    }}
+                  />
+                )}
+              </div>
 
-        <a
-          href="https://github.com/trjgdyan/e-commerce"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="portfolio__card">
-            <Image
-              src={ecommerce}
-              width={400}
-              height={400}
-              alt="Dashboard e-commerce"
-            />
-            <div className="portfolio__details">
-              <h3>E-commerce</h3>
-              <p>
-                Online Shopping Application is a platform that allows users to
-                search, select and purchase various products from various
-                categories practically through their devices.
-              </p>
-            </div>
-          </div>
-        </a>
+              {/* Content */}
+              <div
+                style={{
+                  padding: "20px 22px",
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                {/* Tags */}
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "6px",
+                    marginBottom: "10px",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  {p.tags.map((t) => (
+                    <span
+                      key={t}
+                      style={{
+                        fontSize: "10.5px",
+                        fontWeight: 700,
+                        letterSpacing: "0.05em",
+                        textTransform: "uppercase",
+                        color: "var(--accent)",
+                        background: "var(--accent-light)",
+                        padding: "3px 9px",
+                        borderRadius: "99px",
+                        border: "1px solid #c5d3f8",
+                      }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
 
-        <a
-          href="https://github.com/trjgdyan/SINOKI-POLINEMA"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="portfolio__card">
-            <Image
-              src={sinoki}
-              width={400}
-              height={400}
-              alt="Sign Up Page Sinoki"
-            />
-            <div className="portfolio__details">
-              <h3>SINOKI</h3>
-              <p>
-                The Polinema Intra-Campus Student Organization Information
-                System (SINOKI) website is a digital platform that facilitates
-                the management and dissemination of information on student
-                organization activities at Polinema.
-              </p>
-            </div>
-          </div>
-        </a>
+                <h3
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 700,
+                    color: "var(--text-primary)",
+                    letterSpacing: "-0.01em",
+                    marginBottom: "6px",
+                  }}
+                >
+                  {p.title}
+                </h3>
 
-        <a
-          href="https://github.com/trjgdyan/Mobile_project-akhir"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="portfolio__card flex flex-col items-center">
-            <div className="flex justify-center w-full">
-              <Image
-                src={projectmobile}
-                width={400}
-                height={400}
-                alt="Dashboard Ez-Verify"
-                className="h-48 w-24"
-              />
-            </div>
-            <div className="portfolio__details text-center mt-4">
-              <h3>Ez Verify</h3>
-              <p>
-                Ez-Verify is a simple verification application prototype
-                equipped with an OCR system to scan and confirm information from
-                physical documents
-              </p>
-            </div>
-          </div>
-        </a>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    color: "var(--text-secondary)",
+                    lineHeight: 1.65,
+                    flex: 1,
+                  }}
+                >
+                  {p.desc}
+                </p>
 
-        <a
-          href="https://github.com/trjgdyan/ProjectSPK_EDAS"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="portfolio__card">
-            <Image
-              src={edas}
-              width={400}
-              height={400}
-              alt="Dashboard e-commerce"
-            />
-            <div className="portfolio__details">
-              <h3>EDAS Website</h3>
-              <p>
-                The Decision Support System for Selecting the Most Sold Drinks
-                is an application that helps sellers determine which drinks are
-                the best sellers on the market.
-              </p>
+                <div
+                  style={{
+                    marginTop: "16px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    color: "var(--accent)",
+                    fontSize: "12.5px",
+                    fontWeight: 700,
+                  }}
+                >
+                  View on GitHub
+                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                    <path
+                      d="M2 10L10 2M10 2H4M10 2V8"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+        ))}
       </div>
     </section>
   );
